@@ -37,3 +37,10 @@ What should employees do with suspicious emails?	Pending verification
 
 Limitations
 The knowledge base is small, local generation can be slow, and answers require source review. Future improvements include better error handling, retrieval, and source previews.
+
+## Screenshot
+
+![App screenshot](images/1.png)
+![App screenshot](images/2.png)
+![App screenshot](images/3.png)
+![App screenshot](images/4.png)
