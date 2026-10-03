@@ -1,4 +1,5 @@
 from typing import Any
+#from urllib import response
 
 import requests
 
@@ -99,8 +100,21 @@ def call_generation_model(prompt: str) -> str:
             }
         }
     """
-    raise NotImplementedError("TODO: Call the configured generation model.")
+    response = requests.post(
+        f"{Config.OLLAMA_BASE_URL.rstrip('/')}/api/generate",
+        json={
+            "model": Config.GENERATION_MODEL,
+            "prompt": prompt,
+            "stream": False,
+            "options": {
+                "temperature": Config.TEMPERATURE
+            }
+        },
+        timeout=120,
+    )
+    response.raise_for_status()
 
+    return response.json()["response"].strip()
 
 def format_sources(chunks: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """

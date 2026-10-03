@@ -6,9 +6,11 @@ name = "pypi"
 [packages]
 flask = "==3.0.3"
 flask-cors = "==4.0.1"
-python-dotenv = "==1.0.1"
 requests = "==2.32.3"
 chromadb = "==0.5.5"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.10"
+
+[dev-packages]
